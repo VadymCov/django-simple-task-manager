@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<header class="container my-4 text-center text-secondary-emphasis">
+    <h1>Task manager</h1>
+    <h2>Your personal your assistant</h2>
+</header>
+<form action="{% url "add" %}" method="post" class="d-flex justify-content-center">
+
+    {% csrf_token %}
+
+    <div class="input-group mb-3 " style="max-width: 600px">
+        <input type="text" name="title" class="form-control input_style "  placeholder="enter the task name"
+                aria-label="Recipient’s username" 
+                aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary " type="submit" id="button-addon2">Add task</button>
+    </div>
+</form>
+<div>
+
+    {% for task in tasks %}
+
+        {% if not task %}
+            <h1>You have no task</h1>
+        {% endif %}
+
+        {% if not task.is_complete%}
+            <div class="container my-4 text-center">
+                <span class="custom-badge">not completed</span>
+                <span class="text-light ">{{ task.title }}</span>
+                <a href="{% url "update" task_id=task.id %}" class="btn btn-outline-secondary text-success">completed</a>
+                <a href="{% url "delete" task_id=task.id %}" class="btn btn-outline-secondary text-danger">delete</a>
+            </div>
+        {% else %}
+            <div class="container my-4 text-center">
+                <span class="custom-badge">completed</span>
+                <span class="text-light ">{{ task.title }}</span>
+                <a href="{% url "update" task_id=task.id %}" class="btn btn-outline-secondary text-success">reopen</a>
+                <a href="{% url "delete" task_id=task.id %}" class="btn btn-outline-secondary text-danger">delete</a>
+            </div>
+        {% endif %}
+
+    {% endfor %}
+</div>
+{% endblock content %} 

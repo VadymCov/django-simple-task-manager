@@ -1,0 +1,7 @@
+# Virtualenv
+/clear_evn/
+
+#Byte-compiled
+__pycache__/
+
+db.sqlite3
