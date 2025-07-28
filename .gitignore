@@ -1,7 +1,18 @@
-# Virtualenv
-/clear_evn/
+# Virtual environment
+.venv/
+venv/
+env/
 
-#Byte-compiled
+# Python cache
 __pycache__/
 
-db.sqlite3
+# Database files
+*.db
+
+# IDE files
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db

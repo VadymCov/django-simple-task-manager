@@ -1,17 +1,19 @@
-# Task Board
+📑Task Board
 
-A simple web task manager implemented in Python with Django and Bootstrap.
+![List of menu buttons (their labels and order)](image/image.jpg)
 
-Allows you to create, view, mark as done and delete tasks on an intuitive board.
+A simple web task manager, implemented in Python using Django and Bootstrap.
 
---
+✅Allows you to create, view, mark as completed and delete tasks on an intuitive board.
 
-## Key features
+------------------
 
-- Add new tasks with a title
-- Automatically display a list of all tasks
-- Mark a task as done/not done
-- Delete unnecessary tasks
+📑Main features
+
+✅- Add new tasks with a title
+✅- Automatically display a list of all tasks
+✅- Mark a task as completed/not completed
+✅- Delete unnecessary tasks
 
 ---
 
